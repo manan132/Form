@@ -7,7 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 .page-container {
-  background-image: url("./Resources/gradient_bg.jpg");
+  background-image: url("https://img.freepik.com/premium-vector/modern-abstract-drawing-background-design_75906-192.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,6 +15,9 @@
   font-family: Arial, sans-serif;
   height: 96vh;
   padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-wrapper {
@@ -28,6 +31,7 @@
   border: 0.6px solid rgb(165, 165, 165);
   border-radius: 5px;
   overflow: hidden;
+
 }
 
 .form-wrapper h2 {

@@ -49,12 +49,16 @@ const RegistrationForm = () => {
   };
 
   const getErrorMessage = (field) => {
-    return formErrors[field] ? <span className="error-text">{formErrors[field]}</span> : null;
+    return formErrors[field] ? (
+      <span className="error-text">{formErrors[field]}</span>
+    ) : null;
   };
 
   const isFormValid = () => {
-    return Object.values(formValues).every(value => value.trim() !== "") &&
-           Object.values(formErrors).every(error => error === "");
+    return (
+      Object.values(formValues).every((value) => value.trim() !== "") &&
+      Object.values(formErrors).every((error) => error === "")
+    );
   };
 
   const handleSubmit = (e) => {
@@ -84,9 +88,11 @@ const RegistrationForm = () => {
   return (
     <div className="page-container">
       <h4 className="login-prompt">You Have Already Registered?</h4>
-      <a className="login-link" href="">Login</a>
+      <a className="login-link" href="">
+        Login
+      </a>
       <div className="form-wrapper">
-        <h2>Google Form</h2>
+        <h2>SignUp Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="input-group half-width">
@@ -129,7 +135,7 @@ const RegistrationForm = () => {
               />
             </div>
             <div className="input-group half-width">
-              <label>Email  {getErrorMessage("email")}</label>
+              <label>Email {getErrorMessage("email")}</label>
               <input
                 type="email"
                 name="email"
@@ -154,14 +160,20 @@ const RegistrationForm = () => {
                 onBlur={handleInputBlur}
                 required
               />
-              <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={togglePasswordVisibility}
+              >
                 {showPassword ? "Hide" : "View"}
               </button>
             </div>
           </div>
 
           <div className="input-group">
-            <label>Mobile Number (include country code)* {getErrorMessage("phone")}</label>
+            <label>
+              Mobile Number (include country code)* {getErrorMessage("phone")}
+            </label>
             <input
               type="number"
               name="phone"
